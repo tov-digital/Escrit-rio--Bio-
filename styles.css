@@ -222,15 +222,21 @@ body {
   transition: transform var(--transition-fast), color var(--transition-fast);
 }
 
-.action-btn:hover {
-  background: var(--color-botanical);
-  border-color: var(--color-hazelnut);
+/* Quick Action Buttons Hover & Active States */
+.action-btn:hover,
+.action-btn:active,
+.action-btn:focus {
+  background: linear-gradient(135deg, var(--color-exotic-orange), #b85028);
+  border-color: var(--color-exotic-orange-hover);
+  color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-glow);
 }
 
-.action-btn:hover i {
-  color: var(--color-antique);
+.action-btn:hover i,
+.action-btn:active i,
+.action-btn:focus i {
+  color: #ffffff;
   transform: scale(1.15);
 }
 
@@ -244,7 +250,7 @@ body {
   animation: fadeInUp 0.8s 0.3s ease-out backwards;
 }
 
-/* Link Cards */
+/* Link Cards Base Style */
 .link-card {
   position: relative;
   display: flex;
@@ -317,13 +323,6 @@ body {
   line-height: 1.3;
 }
 
-.link-card-subtitle {
-  font-size: 0.78rem;
-  color: var(--color-antique-muted);
-  font-weight: 400;
-  margin-top: 2px;
-}
-
 .link-card-arrow {
   color: var(--color-hazelnut);
   font-size: 1rem;
@@ -331,70 +330,34 @@ body {
   z-index: 1;
 }
 
-.link-card:hover {
+/* Main Link Cards Hover & Active Click States */
+.link-card:hover,
+.link-card:active,
+.link-card:focus {
   transform: translateY(-3px);
-  background: rgba(52, 24, 25, 0.95);
-  border-color: var(--color-hazelnut);
-  box-shadow: var(--shadow-md), 0 0 15px rgba(168, 139, 87, 0.2);
-}
-
-.link-card:hover .link-card-arrow {
-  transform: translateX(4px);
-  color: var(--color-antique);
-}
-
-.link-card:hover .link-card-icon {
-  background: var(--color-hazelnut);
-  color: var(--color-blackout);
-}
-
-/* Featured CTA Card (Primary WhatsApp Schedule Button) */
-.link-card.featured-cta {
   background: linear-gradient(135deg, var(--color-exotic-orange), #b85028);
-  border: 1px solid var(--color-exotic-orange-hover);
-  color: #ffffff;
+  border-color: var(--color-exotic-orange-hover);
   box-shadow: var(--shadow-glow), var(--shadow-md);
-  animation: pulseGlow 3s infinite;
 }
 
-.link-card.featured-cta .link-card-title {
+.link-card:hover .link-card-title,
+.link-card:active .link-card-title,
+.link-card:focus .link-card-title {
   color: #ffffff;
-  font-weight: 700;
 }
 
-.link-card.featured-cta .link-card-subtitle {
-  color: rgba(255, 255, 255, 0.9);
+.link-card:hover .link-card-arrow,
+.link-card:active .link-card-arrow,
+.link-card:focus .link-card-arrow {
+  transform: translateX(4px);
+  color: #ffffff;
 }
 
-.link-card.featured-cta .link-card-icon {
+.link-card:hover .link-card-icon,
+.link-card:active .link-card-icon,
+.link-card:focus .link-card-icon {
   background: rgba(255, 255, 255, 0.2);
   color: #ffffff;
-}
-
-.link-card.featured-cta .link-card-arrow {
-  color: #ffffff;
-}
-
-.link-card.featured-cta:hover {
-  background: linear-gradient(135deg, var(--color-exotic-orange-hover), var(--color-exotic-orange));
-  transform: translateY(-4px) scale(1.01);
-  box-shadow: 0 0 30px rgba(217, 107, 67, 0.6);
-}
-
-/* Hot Badge */
-.featured-badge {
-  position: absolute;
-  top: 0;
-  right: 18px;
-  background: var(--color-hazelnut);
-  color: var(--color-blackout);
-  font-size: 0.65rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  padding: 2px 8px;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
-  letter-spacing: 0.5px;
 }
 
 /* Footer Section */
