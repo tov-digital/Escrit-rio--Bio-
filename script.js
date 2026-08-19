@@ -1,5 +1,5 @@
 /**
- * Dr. Alexandre Medeiros - Link-in-Bio Web App
+ * Advocacia Filipe Carvalho - Link-in-Bio Web App
  * Interactive Scripts, Modals, vCard Generator & Toast Notifications
  */
 
@@ -114,15 +114,15 @@ function downloadVCard() {
   const vcardData = [
     'BEGIN:VCARD',
     'VERSION:3.0',
-    'N:Medeiros;Alexandre;Dr.;;',
-    'FN:Dr. Alexandre Medeiros',
-    'ORG:Medeiros Advocacia & Consultoria Jurídica',
-    'TITLE:Advogado & Consultor Jurídico',
-    'TEL;TYPE=CELL,VOICE:+5511999999999',
-    'EMAIL;TYPE=PREF,INTERNET:contato@medeirosadvocacia.com.br',
-    'ADR;TYPE=WORK:;;Av. Paulista, 1500 - Conjunto 1402;São Paulo;SP;01310-200;Brasil',
-    'URL:https://medeirosadvocacia.com.br',
-    'NOTE:Advocacia & Consultoria Jurídica de Alta Performance',
+    'N:Carvalho;Filipe;Dr.;;',
+    'FN:Dr. Filipe Carvalho',
+    'ORG:Advocacia Filipe Carvalho',
+    'TITLE:Advocacia Empresarial & Consultoria Jurídica',
+    'TEL;TYPE=CELL,VOICE:+551731218192',
+    'EMAIL;TYPE=PREF,INTERNET:contato@advocaciafilipecarvalho.com.br',
+    'ADR;TYPE=WORK:;;R. Duarte Pachêco, 90B - Higienópolis;São José do Rio Preto;SP;15085-140;Brasil',
+    'URL:https://advocaciafilipecarvalho.com.br',
+    'NOTE:Advocacia Empresarial e Consultoria Jurídica de Alta Performance',
     'END:VCARD'
   ].join('\r\n');
 
@@ -130,7 +130,7 @@ function downloadVCard() {
   const url = URL.createObjectURL(blob);
   const link = document.createElement('a');
   link.href = url;
-  link.setAttribute('download', 'Dr_Alexandre_Medeiros.vcf');
+  link.setAttribute('download', 'Advocacia_Filipe_Carvalho.vcf');
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);

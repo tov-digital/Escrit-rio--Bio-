@@ -252,6 +252,7 @@ body {
   justify-content: space-between;
   width: 100%;
   padding: 16px 20px;
+  min-height: 60px;
   background: var(--color-licorice-card);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
