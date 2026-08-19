@@ -31,6 +31,20 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.style.overflow = '';
     }
   });
+
+  // Practice toggles accordion exclusivity (close other toggles when one opens)
+  const practiceToggles = document.querySelectorAll('.practice-toggle');
+  practiceToggles.forEach(toggle => {
+    toggle.addEventListener('toggle', () => {
+      if (toggle.open) {
+        practiceToggles.forEach(otherToggle => {
+          if (otherToggle !== toggle) {
+            otherToggle.open = false;
+          }
+        });
+      }
+    });
+  });
 });
 
 /**

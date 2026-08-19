@@ -100,19 +100,6 @@
         <i class="fa-solid fa-chevron-right link-card-arrow"></i>
       </div>
 
-      <!-- Articles & Publications Modal Trigger -->
-      <div class="link-card" id="btn-about-office" onclick="openModal('modal-about')">
-        <div class="link-card-content">
-          <div class="link-card-icon">
-            <i class="fa-solid fa-newspaper"></i>
-          </div>
-          <div class="link-card-text">
-            <span class="link-card-title">Artigos e Publicações</span>
-          </div>
-        </div>
-        <i class="fa-solid fa-chevron-right link-card-arrow"></i>
-      </div>
-
       <!-- Location & Map Modal Trigger -->
       <div class="link-card" id="btn-location" onclick="openModal('modal-location')">
         <div class="link-card-content">
@@ -120,7 +107,7 @@
             <i class="fa-solid fa-location-dot"></i>
           </div>
           <div class="link-card-text">
-            <span class="link-card-title">Endereço & Localização</span>
+            <span class="link-card-title">Localização</span>
           </div>
         </div>
         <i class="fa-solid fa-chevron-right link-card-arrow"></i>
@@ -175,93 +162,115 @@
         <h2 class="modal-title">Áreas de Atuação</h2>
         <p class="modal-subtitle">Advocacia Empresarial & Especializada</p>
       </div>
-      <div class="practice-grid">
-        <div class="practice-item">
-          <div class="practice-icon"><i class="fa-solid fa-briefcase"></i></div>
-          <div class="practice-info">
-            <h4>Direito Empresarial & Societário</h4>
-            <p>Assessoria jurídica integral para empresas, estruturações societárias, M&A e governança.</p>
+      <div class="practice-accordion">
+        <details class="practice-toggle">
+          <summary class="practice-summary">
+            <span class="practice-title-text"><i class="fa-solid fa-scale-balanced"></i> Direito Penal Econômico</span>
+            <i class="fa-solid fa-chevron-down toggle-arrow"></i>
+          </summary>
+          <div class="practice-detail">
+            Atuação na defesa e consultoria preventiva em crimes financeiros, tributários, lavagem de dinheiro e infrações contra a ordem econômica.
           </div>
-        </div>
+        </details>
 
-        <div class="practice-item">
-          <div class="practice-icon"><i class="fa-solid fa-file-contract"></i></div>
-          <div class="practice-info">
-            <h4>Gestão de Contratos & Negociações</h4>
-            <p>Elaboração, análise e negociação estratégica de contratos comerciais de alto impacto.</p>
+        <details class="practice-toggle">
+          <summary class="practice-summary">
+            <span class="practice-title-text"><i class="fa-solid fa-briefcase"></i> Direito Empresarial</span>
+            <i class="fa-solid fa-chevron-down toggle-arrow"></i>
+          </summary>
+          <div class="practice-detail">
+            Assessoria estratégica integral para empresas, estruturação societária, reorganizações, governança e proteção dos negócios.
           </div>
-        </div>
+        </details>
 
-        <div class="practice-item">
-          <div class="practice-icon"><i class="fa-solid fa-shield-halved"></i></div>
-          <div class="practice-info">
-            <h4>Advocacia Preventiva & Compliance</h4>
-            <p>Redução de riscos corporativos, conformidade legal e segurança patrimonial.</p>
+        <details class="practice-toggle">
+          <summary class="practice-summary">
+            <span class="practice-title-text"><i class="fa-solid fa-calculator"></i> Direito Tributário</span>
+            <i class="fa-solid fa-chevron-down toggle-arrow"></i>
+          </summary>
+          <div class="practice-detail">
+            Planejamento tributário estratégico, recuperação de créditos fiscais e defesa em autos de infração e execuções fiscais.
           </div>
-        </div>
+        </details>
 
-        <div class="practice-item">
-          <div class="practice-icon"><i class="fa-solid fa-scale-unbalanced"></i></div>
-          <div class="practice-info">
-            <h4>Contencioso Estratégico</h4>
-            <p>Representação em disputas judiciais e arbitrais de alta complexidade.</p>
+        <details class="practice-toggle">
+          <summary class="practice-summary">
+            <span class="practice-title-text"><i class="fa-solid fa-gavel"></i> Direito Cível</span>
+            <i class="fa-solid fa-chevron-down toggle-arrow"></i>
+          </summary>
+          <div class="practice-detail">
+            Gestão de contratos complexos, resolução de litígios civis, responsabilidade civil e soluções patrimoniais.
           </div>
-        </div>
+        </details>
+
+        <details class="practice-toggle">
+          <summary class="practice-summary">
+            <span class="practice-title-text"><i class="fa-solid fa-user-shield"></i> Direito Trabalhista</span>
+            <i class="fa-solid fa-chevron-down toggle-arrow"></i>
+          </summary>
+          <div class="practice-detail">
+            Consultoria preventiva nas relações de trabalho, adequação de rotinas corporativas e defesa em reclamações trabalhistas.
+          </div>
+        </details>
+
+        <details class="practice-toggle">
+          <summary class="practice-summary">
+            <span class="practice-title-text"><i class="fa-solid fa-hand-holding-heart"></i> Direito Previdenciário</span>
+            <i class="fa-solid fa-chevron-down toggle-arrow"></i>
+          </summary>
+          <div class="practice-detail">
+            Planejamento previdenciário corporativo e pessoal, requerimento e revisão de aposentadorias e benefícios do INSS.
+          </div>
+        </details>
       </div>
       <div style="margin-top: 20px;">
-        <a href="https://wa.me/551731218192?text=Ol%C3%A1%2C%20gostaria%20de%20consultar%20sobre%20uma%20demanda%20empresarial." target="_blank" class="btn-primary">
+        <a href="https://wa.me/551731218192?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20jur%C3%ADdica." target="_blank" class="btn-primary">
           <i class="fa-brands fa-whatsapp"></i> Falar com um Especialista
         </a>
       </div>
     </div>
   </div>
 
-  <!-- MODAL: Artigos e Publicações -->
-  <div class="modal-overlay" id="modal-about">
-    <div class="modal-card">
-      <button class="modal-close" onclick="closeModal('modal-about')">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-      <div class="modal-header">
-        <h2 class="modal-title">Artigos e Publicações</h2>
-        <p class="modal-subtitle">Advocacia Filipe Carvalho</p>
-      </div>
-      <div style="font-size: 0.9rem; color: var(--color-antique-muted); line-height: 1.6; text-align: left;">
-        <p style="margin-bottom: 12px;">
-          Confira análises jurídicas, artigos e conteúdos informativos preparados pelo escritório <strong style="color: var(--color-antique);">Advocacia Filipe Carvalho</strong> sobre Direito Empresarial, Contratos e Estratégia Jurídica.
-        </p>
-        <div style="background: rgba(168, 139, 87, 0.1); border-left: 3px solid var(--color-hazelnut); padding: 12px; border-radius: 6px; margin-top: 16px;">
-          <p style="color: var(--color-antique); font-style: italic; font-size: 0.88rem;">
-            "Conhecimento jurídico atualizado a serviço da sua empresa."
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- MODAL: Localização & Endereço -->
+
+  <!-- MODAL: Localização -->
   <div class="modal-overlay" id="modal-location">
     <div class="modal-card">
       <button class="modal-close" onclick="closeModal('modal-location')">
         <i class="fa-solid fa-xmark"></i>
       </button>
       <div class="modal-header">
-        <h2 class="modal-title">Endereço & Atendimento</h2>
-        <p class="modal-subtitle">São José do Rio Preto - SP</p>
+        <h2 class="modal-title">Nossos Endereços</h2>
+        <p class="modal-subtitle">São José do Rio Preto & São Paulo</p>
       </div>
-      <div style="text-align: left; font-size: 0.9rem; color: var(--color-antique-muted); margin-bottom: 20px;">
-        <p style="margin-bottom: 8px;"><i class="fa-solid fa-building" style="color: var(--color-hazelnut); margin-right: 8px;"></i> <strong>Advocacia Filipe Carvalho</strong></p>
-        <p style="margin-bottom: 8px;"><i class="fa-solid fa-location-dot" style="color: var(--color-hazelnut); margin-right: 8px;"></i> R. Duarte Pachêco, 90B - Higienópolis</p>
-        <p style="margin-bottom: 8px;"><i class="fa-solid fa-city" style="color: var(--color-hazelnut); margin-right: 8px;"></i> São José do Rio Preto - SP, 15085-140</p>
-        <p style="margin-bottom: 16px;"><i class="fa-solid fa-phone" style="color: var(--color-hazelnut); margin-right: 8px;"></i> (17) 3121-8192</p>
+
+      <!-- Unidade 1: São José do Rio Preto -->
+      <div class="location-card-unit">
+        <h3 class="unit-title"><i class="fa-solid fa-building"></i> Unidade São José do Rio Preto - SP</h3>
+        <p class="unit-address"><i class="fa-solid fa-location-dot"></i> R. Duarte Pachêco, 90B - Higienópolis, 15085-140</p>
+        <p class="unit-phone"><i class="fa-solid fa-phone"></i> (17) 3121-8192</p>
+        <div class="modal-buttons-row">
+          <a href="https://maps.app.goo.gl/US7nAsybBVARExp97" target="_blank" class="btn-maps">
+            <i class="fa-solid fa-map-location-dot"></i> Maps
+          </a>
+          <a href="https://waze.com/ul?q=R.+Duarte+Pach%C3%AAco,+90B+-+Higien%C3%B3polis,+S%C3%A3o+Jos%C3%A9+do+Rio+Preto+-+SP" target="_blank" class="btn-waze">
+            <i class="fa-brands fa-waze"></i> Waze
+          </a>
+        </div>
       </div>
-      <div class="modal-buttons-row">
-        <a href="https://maps.app.goo.gl/US7nAsybBVARExp97" target="_blank" class="btn-maps">
-          <i class="fa-solid fa-map-location-dot"></i> Abrir no Maps
-        </a>
-        <a href="https://waze.com/ul?q=R.+Duarte+Pach%C3%AAco,+90B+-+Higien%C3%B3polis,+S%C3%A3o+Jos%C3%A9+do+Rio+Preto+-+SP" target="_blank" class="btn-waze">
-          <i class="fa-brands fa-waze"></i> Abrir no Waze
-        </a>
+
+      <!-- Unidade 2: São Paulo -->
+      <div class="location-card-unit">
+        <h3 class="unit-title"><i class="fa-solid fa-building-user"></i> Unidade São Paulo - SP</h3>
+        <p class="unit-address"><i class="fa-solid fa-location-dot"></i> Rua Haddock Lobo, 1307 - Cj. 63 - Jardim Paulista, 01414-003</p>
+        <div class="modal-buttons-row">
+          <a href="https://www.google.com/maps/search/?api=1&query=Rua+Haddock+Lobo,+1307+-+Jardim+Paulista,+S%C3%A3o+Paulo+-+SP,+01414-003" target="_blank" class="btn-maps">
+            <i class="fa-solid fa-map-location-dot"></i> Maps
+          </a>
+          <a href="https://waze.com/ul?q=Rua+Haddock+Lobo,+1307+-+Jardim+Paulista,+S%C3%A3o+Paulo+-+SP" target="_blank" class="btn-waze">
+            <i class="fa-brands fa-waze"></i> Waze
+          </a>
+        </div>
       </div>
     </div>
   </div>

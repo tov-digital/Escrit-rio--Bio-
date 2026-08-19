@@ -490,46 +490,79 @@ body {
   color: var(--color-hazelnut);
 }
 
-/* Practice Areas Grid inside Modal */
-.practice-grid {
+/* Practice Areas Accordion / Toggles inside Modal */
+.practice-accordion {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
+  text-align: left;
 }
 
-.practice-item {
+.practice-toggle {
   background: rgba(18, 18, 18, 0.6);
-  border: 1px solid rgba(168, 139, 87, 0.2);
+  border: 1px solid rgba(168, 139, 87, 0.25);
   border-radius: var(--radius-md);
-  padding: 14px 16px;
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
+  overflow: hidden;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
 }
 
-.practice-icon {
-  font-size: 1.3rem;
-  color: var(--color-hazelnut);
-  background: rgba(168, 139, 87, 0.1);
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
+.practice-toggle[open] {
+  border-color: var(--color-hazelnut);
+  background: rgba(39, 39, 39, 0.9);
+}
+
+.practice-summary {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.practice-info h4 {
+  justify-content: space-between;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
   font-size: 0.95rem;
   color: var(--color-antique);
-  margin-bottom: 4px;
+  list-style: none;
+  transition: color var(--transition-fast);
 }
 
-.practice-info p {
-  font-size: 0.82rem;
+.practice-summary::-webkit-details-marker {
+  display: none;
+}
+
+.practice-summary:hover {
+  color: var(--color-hazelnut-light);
+}
+
+.practice-title-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.practice-title-text i {
+  color: var(--color-hazelnut);
+  font-size: 1.1rem;
+  width: 20px;
+  text-align: center;
+}
+
+.toggle-arrow {
+  color: var(--color-hazelnut);
+  font-size: 0.85rem;
+  transition: transform var(--transition-fast);
+}
+
+.practice-toggle[open] .toggle-arrow {
+  transform: rotate(180deg);
+  color: var(--color-exotic-orange);
+}
+
+.practice-detail {
+  padding: 0 16px 14px 46px;
+  font-size: 0.85rem;
   color: var(--color-antique-muted);
-  line-height: 1.4;
+  line-height: 1.5;
+  animation: fadeIn 0.3s ease-out;
 }
 
 /* Modal Form Controls */
@@ -589,6 +622,51 @@ body {
   box-shadow: var(--shadow-glow);
 }
 
+/* Location Units inside Modal */
+.location-card-unit {
+  background: rgba(18, 18, 18, 0.6);
+  border: 1px solid rgba(168, 139, 87, 0.25);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+.location-card-unit:last-child {
+  margin-bottom: 0;
+}
+
+.unit-title {
+  font-size: 0.95rem;
+  color: var(--color-antique);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.unit-title i {
+  color: var(--color-hazelnut);
+}
+
+.unit-address,
+.unit-phone {
+  font-size: 0.84rem;
+  color: var(--color-antique-muted);
+  line-height: 1.4;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.unit-address i,
+.unit-phone i {
+  color: var(--color-hazelnut);
+  font-size: 0.9rem;
+  margin-top: 3px;
+}
+
 /* Side-by-Side Modal Buttons */
 .modal-buttons-row {
   display: grid;
@@ -603,10 +681,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 8px;
   padding: 12px 6px;
   border-radius: var(--radius-md);
-  font-size: 0.84rem;
+  font-size: 0.88rem;
   font-weight: 700;
   text-decoration: none !important;
   color: #ffffff !important;
@@ -614,6 +692,11 @@ body {
   border: none;
   box-shadow: var(--shadow-sm);
   cursor: pointer;
+}
+
+.btn-maps i,
+.btn-waze i {
+  font-size: 1.35rem; /* Aumentado o tamanho dos ícones */
 }
 
 /* Google Maps Red Branding */
