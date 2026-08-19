@@ -224,8 +224,7 @@ body {
 
 /* Quick Action Buttons Hover & Active States */
 .action-btn:hover,
-.action-btn:active,
-.action-btn:focus {
+.action-btn:active {
   background: linear-gradient(135deg, var(--color-exotic-orange), #b85028);
   border-color: var(--color-exotic-orange-hover);
   color: #ffffff;
@@ -234,8 +233,7 @@ body {
 }
 
 .action-btn:hover i,
-.action-btn:active i,
-.action-btn:focus i {
+.action-btn:active i {
   color: #ffffff;
   transform: scale(1.15);
 }
@@ -332,8 +330,7 @@ body {
 
 /* Main Link Cards Hover & Active Click States */
 .link-card:hover,
-.link-card:active,
-.link-card:focus {
+.link-card:active {
   transform: translateY(-3px);
   background: linear-gradient(135deg, var(--color-exotic-orange), #b85028);
   border-color: var(--color-exotic-orange-hover);
@@ -341,21 +338,18 @@ body {
 }
 
 .link-card:hover .link-card-title,
-.link-card:active .link-card-title,
-.link-card:focus .link-card-title {
+.link-card:active .link-card-title {
   color: #ffffff;
 }
 
 .link-card:hover .link-card-arrow,
-.link-card:active .link-card-arrow,
-.link-card:focus .link-card-arrow {
+.link-card:active .link-card-arrow {
   transform: translateX(4px);
   color: #ffffff;
 }
 
 .link-card:hover .link-card-icon,
-.link-card:active .link-card-icon,
-.link-card:focus .link-card-icon {
+.link-card:active .link-card-icon {
   background: rgba(255, 255, 255, 0.2);
   color: #ffffff;
 }
@@ -394,8 +388,7 @@ body {
 }
 
 .social-icon:hover,
-.social-icon:active,
-.social-icon:focus {
+.social-icon:active {
   background: linear-gradient(135deg, var(--color-exotic-orange), #b85028);
   color: #ffffff;
   border-color: var(--color-exotic-orange-hover);

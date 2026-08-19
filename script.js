@@ -108,25 +108,43 @@ function fallbackCopyTextToClipboard(text) {
 }
 
 /**
- * Download vCard (.vcf) Contact Card
+ * Save / Open vCard (.vcf) Contact Card directly in mobile Contacts app
  */
 function downloadVCard() {
   const vcardData = [
     'BEGIN:VCARD',
     'VERSION:3.0',
-    'N:Carvalho;Filipe;Dr.;;',
-    'FN:Dr. Filipe Carvalho',
+    'N:Carvalho;Advocacia Filipe;;;',
+    'FN:Advocacia Filipe Carvalho',
     'ORG:Advocacia Filipe Carvalho',
-    'TITLE:Advocacia Empresarial & Consultoria Jurídica',
-    'TEL;TYPE=CELL,VOICE:+551731218192',
+    'TITLE:Advocacia Empresarial e Tributária',
+    'TEL;TYPE=CELL,VOICE;TYPE=pref:+551731218192',
     'EMAIL;TYPE=PREF,INTERNET:contato@advocaciafilipecarvalho.com.br',
     'ADR;TYPE=WORK:;;R. Duarte Pachêco, 90B - Higienópolis;São José do Rio Preto;SP;15085-140;Brasil',
     'URL:https://advocaciafilipecarvalho.com.br',
-    'NOTE:Advocacia Empresarial e Consultoria Jurídica de Alta Performance',
+    'NOTE:Escritório multidisciplinar com especialidade em Direito Empresarial e Tributário.',
     'END:VCARD'
   ].join('\r\n');
 
-  const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8;' });
+  // Use mime type text/x-vcard for mobile OS contact import trigger
+  const blob = new Blob([vcardData], { type: 'text/x-vcard;charset=utf-8' });
+  
+  // If browser supports web share API with files (modern mobile browsers)
+  const file = new File([blob], 'Advocacia_Filipe_Carvalho.vcf', { type: 'text/x-vcard' });
+  if (navigator.canShare && navigator.canShare({ files: [file] })) {
+    navigator.share({
+      files: [file],
+      title: 'Advocacia Filipe Carvalho',
+      text: 'Contato de Advocacia Filipe Carvalho'
+    }).catch(() => {
+      triggerVCardDownload(blob);
+    });
+  } else {
+    triggerVCardDownload(blob);
+  }
+}
+
+function triggerVCardDownload(blob) {
   const url = URL.createObjectURL(blob);
   const link = document.createElement('a');
   link.href = url;
@@ -134,7 +152,6 @@ function downloadVCard() {
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
-  URL.revokeObjectURL(url);
-
-  showToast('Cartão de contato (.vcf) baixado!');
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  showToast('Abrindo contato...');
 }
