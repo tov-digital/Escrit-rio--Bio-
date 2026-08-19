@@ -393,12 +393,14 @@ body {
   transition: all var(--transition-fast);
 }
 
-.social-icon:hover {
-  background: var(--color-botanical);
-  color: var(--color-hazelnut-light);
-  border-color: var(--color-hazelnut);
+.social-icon:hover,
+.social-icon:active,
+.social-icon:focus {
+  background: linear-gradient(135deg, var(--color-exotic-orange), #b85028);
+  color: #ffffff;
+  border-color: var(--color-exotic-orange-hover);
   transform: translateY(-3px);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-glow);
 }
 
 .copyright {
