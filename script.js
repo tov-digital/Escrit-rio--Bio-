@@ -108,7 +108,7 @@ function fallbackCopyTextToClipboard(text) {
 }
 
 /**
- * Save / Open vCard (.vcf) Contact Card directly in mobile Contacts app
+ * Download / Open vCard (.vcf) Contact Card
  */
 function downloadVCard() {
   const vcardData = [
@@ -126,17 +126,33 @@ function downloadVCard() {
     'END:VCARD'
   ].join('\r\n');
 
-  // Use Data URL encoded string to trigger OS contact prompt directly
-  const encodedVCard = encodeURIComponent(vcardData);
-  const dataUrl = `data:text/vcard;charset=utf-8,${encodedVCard}`;
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-  // Create link and set location or click to launch Contacts app action window
-  const link = document.createElement('a');
-  link.href = dataUrl;
-  link.setAttribute('download', 'Advocacia_Filipe_Carvalho.vcf');
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  if (isMobile) {
+    // No celular, usar window.open ou link direto sem o atributo 'download' força a abertura nativa do app de contatos
+    const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    
+    // Tenta abrir a intent nativa de contato
+    const link = document.createElement('a');
+    link.href = url;
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+  } else {
+    // No desktop, faz o download do arquivo .vcf normalmente
+    const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', 'Advocacia_Filipe_Carvalho.vcf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
 
-  showToast('Abrindo agenda de contatos...');
+  showToast('Abrindo cartão de contato...');
 }
