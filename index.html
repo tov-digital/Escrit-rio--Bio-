@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Dr. Alexandre Medeiros | Advocacia & Consultoria Jurídica</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Escritório de Advocacia e Consultoria Jurídica de Alta Performance. Agende sua consulta jurídica presencial ou online via WhatsApp.">
+  <meta name="keywords" content="Advogado, Advocacia, Consultoria Jurídica, Direito Civil, Direito Empresarial, Direito Tributário, Link na Bio">
+  <meta name="author" content="Escritório de Advocacia Bio">
+
+  <!-- OpenGraph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dr. Alexandre Medeiros | Advocacia & Consultoria Jurídica">
+  <meta property="og:description" content="Atendimento jurídico especializado. Clique para agendar uma consulta via WhatsApp.">
+  <meta property="og:image" content="assets/profile.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="page-container">
+
+    <!-- Profile Header Section -->
+    <header class="profile-section">
+      <div class="avatar-wrapper">
+        <img src="assets/profile.jpg" alt="Dr. Alexandre Medeiros" class="avatar-img">
+        <div class="verified-badge" title="Profissional Verificado">
+          <i class="fa-solid fa-check"></i>
+        </div>
+      </div>
+
+      <h1 class="profile-name">
+        Dr. Alexandre Medeiros
+      </h1>
+      <p class="profile-title">Advocacia & Consultoria Jurídica</p>
+      <p class="profile-bio">
+        Especialista em Soluções Jurídicas Estratégicas, Direito Empresarial, Civil e Proteção Patrimonial.
+      </p>
+
+      <div class="badge-tag">
+        <span class="status-dot"></span> Atendimento Online & Presencial Disponível
+      </div>
+    </header>
+
+    <!-- Quick Action Bar -->
+    <section class="quick-actions" aria-label="Ações Rápidas">
+      <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20jur%C3%ADdica." target="_blank" class="action-btn" id="quick-whatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>WhatsApp</span>
+      </a>
+
+      <a href="tel:+5511999999999" class="action-btn" id="quick-call">
+        <i class="fa-solid fa-phone"></i>
+        <span>Ligar</span>
+      </a>
+
+      <a href="mailto:contato@medeirosadvocacia.com.br" class="action-btn" id="quick-email">
+        <i class="fa-regular fa-envelope"></i>
+        <span>E-mail</span>
+      </a>
+
+      <button class="action-btn" id="quick-vcard" onclick="downloadVCard()">
+        <i class="fa-regular fa-id-card"></i>
+        <span>Salvar</span>
+      </button>
+    </section>
+
+    <!-- Main Link Buttons -->
+    <main class="links-container" aria-label="Links Principais">
+
+      <!-- Featured WhatsApp Schedule CTA -->
+      <a href="https://wa.me/5511999999999?text=Ol%C3%A1%20Dr.%20Alexandre%2C%20gostaria%20de%20agendar%20uma%20consulta%20jur%C3%ADdica." target="_blank" class="link-card featured-cta" id="cta-whatsapp">
+        <span class="featured-badge">Atendimento Prioritário</span>
+        <div class="link-card-content">
+          <div class="link-card-icon">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <div class="link-card-text">
+            <span class="link-card-title">Agendar Consulta Jurídica</span>
+            <span class="link-card-subtitle">Fale diretamente via WhatsApp com nossa equipe</span>
+          </div>
+        </div>
+        <i class="fa-solid fa-chevron-right link-card-arrow"></i>
+      </a>
+
+      <!-- Practice Areas Modal Trigger -->
+      <div class="link-card" id="btn-practice-areas" onclick="openModal('modal-practice')">
+        <div class="link-card-content">
+          <div class="link-card-icon">
+            <i class="fa-solid fa-scale-balanced"></i>
+          </div>
+          <div class="link-card-text">
+            <span class="link-card-title">Áreas de Atuação</span>
+            <span class="link-card-subtitle">Direito Civil, Empresarial, Tributário e Contratos</span>
+          </div>
+        </div>
+        <i class="fa-solid fa-chevron-right link-card-arrow"></i>
+      </div>
+
+      <!-- About Office Modal Trigger -->
+      <div class="link-card" id="btn-about-office" onclick="openModal('modal-about')">
+        <div class="link-card-content">
+          <div class="link-card-icon">
+            <i class="fa-solid fa-building-columns"></i>
+          </div>
+          <div class="link-card-text">
+            <span class="link-card-title">Sobre o Escritório</span>
+            <span class="link-card-subtitle">Conheça nossa trajetória e compromisso de excelência</span>
+          </div>
+        </div>
+        <i class="fa-solid fa-chevron-right link-card-arrow"></i>
+      </div>
+
+      <!-- Location & Map Modal Trigger -->
+      <div class="link-card" id="btn-location" onclick="openModal('modal-location')">
+        <div class="link-card-content">
+          <div class="link-card-icon">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <div class="link-card-text">
+            <span class="link-card-title">Endereço & Localização</span>
+            <span class="link-card-subtitle">Av. Paulista, Edifício Executive - São Paulo/SP</span>
+          </div>
+        </div>
+        <i class="fa-solid fa-chevron-right link-card-arrow"></i>
+      </div>
+
+      <!-- Articles / Publications -->
+      <a href="https://jusbrasil.com.br" target="_blank" class="link-card" id="btn-articles">
+        <div class="link-card-content">
+          <div class="link-card-icon">
+            <i class="fa-solid fa-newspaper"></i>
+          </div>
+          <div class="link-card-text">
+            <span class="link-card-title">Artigos & Publicações</span>
+            <span class="link-card-subtitle">Leia nossas últimas orientações e pareceres jurídicos</span>
+          </div>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square link-card-arrow"></i>
+      </a>
+
+      <!-- Share Profile / QR Code Trigger -->
+      <div class="link-card" id="btn-share-profile" onclick="openModal('modal-share')">
+        <div class="link-card-content">
+          <div class="link-card-icon">
+            <i class="fa-solid fa-qrcode"></i>
+          </div>
+          <div class="link-card-text">
+            <span class="link-card-title">Compartilhar Perfil</span>
+            <span class="link-card-subtitle">QR Code e link direto para indicar o escritório</span>
+          </div>
+        </div>
+        <i class="fa-solid fa-share-nodes link-card-arrow"></i>
+      </div>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+      <div class="social-links">
+        <a href="https://instagram.com" target="_blank" class="social-icon" title="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="social-icon" title="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://wa.me/5511999999999" target="_blank" class="social-icon" title="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="mailto:contato@medeirosadvocacia.com.br" class="social-icon" title="E-mail">
+          <i class="fa-regular fa-envelope"></i>
+        </a>
+        <a href="#" onclick="copyProfileLink()" class="social-icon" title="Copiar Link">
+          <i class="fa-regular fa-copy"></i>
+        </a>
+      </div>
+
+      <p class="copyright">
+        &copy; 2026 <span>Dr. Alexandre Medeiros</span>. Todos os direitos reservados.
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- MODAL: Áreas de Atuação -->
+  <div class="modal-overlay" id="modal-practice">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal('modal-practice')">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-header">
+        <h2 class="modal-title">Áreas de Atuação</h2>
+        <p class="modal-subtitle">Especialidades e Práticas Jurídicas</p>
+      </div>
+      <div class="practice-grid">
+        <div class="practice-item">
+          <div class="practice-icon"><i class="fa-solid fa-briefcase"></i></div>
+          <div class="practice-info">
+            <h4>Direito Empresarial & Societário</h4>
+            <p>Contratos empresariais, governança, fusões, aquisições e estruturação de negócios.</p>
+          </div>
+        </div>
+
+        <div class="practice-item">
+          <div class="practice-icon"><i class="fa-solid fa-scale-unbalanced"></i></div>
+          <div class="practice-info">
+            <h4>Direito Civil & Contratos</h4>
+            <p>Elaboração contratual, responsabilidade civil, contencioso e gestão patrimonial.</p>
+          </div>
+        </div>
+
+        <div class="practice-item">
+          <div class="practice-icon"><i class="fa-solid fa-coins"></i></div>
+          <div class="practice-info">
+            <h4>Direito Tributário & Planejamento</h4>
+            <p>Consultoria tributária preventiva, redução legal de impostos e defesas fiscais.</p>
+          </div>
+        </div>
+
+        <div class="practice-item">
+          <div class="practice-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="practice-info">
+            <h4>Advocacia Preventiva & Compliance</h4>
+            <p>Mapeamento de riscos jurídicos e implementação de políticas corporativas seguras.</p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 20px;">
+        <a href="https://wa.me/5511999999999?text=Gostaria%20de%20consultar%20sobre%20uma%20rea%20espec%C3%ADfica." target="_blank" class="btn-primary">
+          <i class="fa-brands fa-whatsapp"></i> Consultar sobre um Caso
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Sobre o Escritório -->
+  <div class="modal-overlay" id="modal-about">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal('modal-about')">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-header">
+        <h2 class="modal-title">Sobre o Escritório</h2>
+        <p class="modal-subtitle">Tradição, Ética & Resultados</p>
+      </div>
+      <div style="font-size: 0.9rem; color: var(--color-antique-muted); line-height: 1.6; text-align: left;">
+        <p style="margin-bottom: 12px;">
+          O escritório <strong style="color: var(--color-antique);">Dr. Alexandre Medeiros Advocacia & Consultoria Jurídica</strong> atua de forma personalizada e estratégica no acompanhamento de demandas complexas.
+        </p>
+        <p style="margin-bottom: 12px;">
+          Nossa premissa fundamental é a <strong style="color: var(--color-hazelnut);">excelência técnica aliada à agilidade no atendimento</strong>, oferecendo segurança jurídica a clientes individuais e corporativos em todo o Brasil.
+        </p>
+        <div style="background: rgba(168, 139, 87, 0.1); border-left: 3px solid var(--color-hazelnut); padding: 12px; border-radius: 6px; margin-top: 16px;">
+          <p style="color: var(--color-antique); font-style: italic; font-size: 0.88rem;">
+            "A melhor estratégia jurídica combina rigor técnico, ética inegociável e visão preventiva."
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Localização & Endereço -->
+  <div class="modal-overlay" id="modal-location">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal('modal-location')">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-header">
+        <h2 class="modal-title">Endereço & Atendimento</h2>
+        <p class="modal-subtitle">Venha nos fazer uma visita</p>
+      </div>
+      <div style="text-align: left; font-size: 0.9rem; color: var(--color-antique-muted); margin-bottom: 20px;">
+        <p style="margin-bottom: 8px;"><i class="fa-solid fa-building" style="color: var(--color-hazelnut); margin-right: 8px;"></i> <strong>Edifício Executive Tower</strong></p>
+        <p style="margin-bottom: 8px;"><i class="fa-solid fa-location-dot" style="color: var(--color-hazelnut); margin-right: 8px;"></i> Av. Paulista, 1500 - Conjunto 1402</p>
+        <p style="margin-bottom: 8px;"><i class="fa-solid fa-city" style="color: var(--color-hazelnut); margin-right: 8px;"></i> Bela Vista, São Paulo - SP</p>
+        <p style="margin-bottom: 16px;"><i class="fa-solid fa-square-parking" style="color: var(--color-hazelnut); margin-right: 8px;"></i> Estacionamento com valet no local</p>
+      </div>
+      <a href="https://maps.google.com" target="_blank" class="btn-primary" style="margin-bottom: 10px;">
+        <i class="fa-solid fa-map-location-dot"></i> Abrir no Google Maps
+      </a>
+      <a href="https://waze.com" target="_blank" class="btn-primary" style="background: var(--color-licorice); border: 1px solid var(--color-hazelnut);">
+        <i class="fa-brands fa-waze"></i> Abrir no Waze
+      </a>
+    </div>
+  </div>
+
+  <!-- MODAL: Compartilhar Perfil -->
+  <div class="modal-overlay" id="modal-share">
+    <div class="modal-card" style="text-align: center;">
+      <button class="modal-close" onclick="closeModal('modal-share')">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-header">
+        <h2 class="modal-title">Compartilhar Perfil</h2>
+        <p class="modal-subtitle">Escaneie o QR Code ou copie o link</p>
+      </div>
+      
+      <div class="qr-code-box">
+        <img id="qr-code-img" src="" alt="QR Code do Perfil">
+      </div>
+
+      <p style="font-size: 0.82rem; color: var(--color-antique-muted); margin-bottom: 18px;">
+        Aponte a câmera do celular para abrir esta página em qualquer dispositivo.
+      </p>
+
+      <button class="btn-primary" onclick="copyProfileLink()">
+        <i class="fa-regular fa-copy"></i> Copiar Link do Perfil
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-notification" id="toast">
+    <i class="fa-solid fa-circle-check" style="color: var(--color-hazelnut);"></i>
+    <span id="toast-msg">Link copiado com sucesso!</span>
+  </div>
+
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
