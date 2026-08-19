@@ -89,6 +89,27 @@ function showToast(message) {
 }
 
 /**
+ * Share Profile Native Sheet (Mobile) or Fallback Modal
+ */
+function shareProfile() {
+  const shareData = {
+    title: 'Advocacia Filipe Carvalho',
+    text: 'Advocacia Filipe Carvalho - Advocacia Empresarial e Tributária.',
+    url: window.location.href
+  };
+
+  if (navigator.share) {
+    navigator.share(shareData).catch((err) => {
+      if (err.name !== 'AbortError') {
+        openModal('modal-share');
+      }
+    });
+  } else {
+    openModal('modal-share');
+  }
+}
+
+/**
  * Copy Profile Link to Clipboard
  */
 function copyProfileLink() {
