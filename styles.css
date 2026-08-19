@@ -585,12 +585,62 @@ body {
   gap: 8px;
   transition: all var(--transition-fast);
   box-shadow: var(--shadow-sm);
+  text-decoration: none !important;
 }
 
 .btn-primary:hover {
   background: var(--color-exotic-orange-hover);
   transform: translateY(-2px);
   box-shadow: var(--shadow-glow);
+}
+
+/* Side-by-Side Modal Buttons */
+.modal-buttons-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.btn-maps,
+.btn-waze {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 6px;
+  border-radius: var(--radius-md);
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration: none !important;
+  color: #ffffff !important;
+  transition: all var(--transition-fast);
+  border: none;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+}
+
+/* Google Maps Red Branding */
+.btn-maps {
+  background: linear-gradient(135deg, #EA4335, #D93025);
+}
+
+.btn-maps:hover {
+  background: linear-gradient(135deg, #ff5243, #EA4335);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(234, 67, 53, 0.4);
+}
+
+/* Waze Cyan/Blue Branding */
+.btn-waze {
+  background: linear-gradient(135deg, #00B2FF, #0088CC);
+}
+
+.btn-waze:hover {
+  background: linear-gradient(135deg, #33C4FF, #00B2FF);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 178, 255, 0.4);
 }
 
 /* Toast Notifications */
