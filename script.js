@@ -126,32 +126,17 @@ function downloadVCard() {
     'END:VCARD'
   ].join('\r\n');
 
-  // Use mime type text/x-vcard for mobile OS contact import trigger
-  const blob = new Blob([vcardData], { type: 'text/x-vcard;charset=utf-8' });
-  
-  // If browser supports web share API with files (modern mobile browsers)
-  const file = new File([blob], 'Advocacia_Filipe_Carvalho.vcf', { type: 'text/x-vcard' });
-  if (navigator.canShare && navigator.canShare({ files: [file] })) {
-    navigator.share({
-      files: [file],
-      title: 'Advocacia Filipe Carvalho',
-      text: 'Contato de Advocacia Filipe Carvalho'
-    }).catch(() => {
-      triggerVCardDownload(blob);
-    });
-  } else {
-    triggerVCardDownload(blob);
-  }
-}
+  // Use Data URL encoded string to trigger OS contact prompt directly
+  const encodedVCard = encodeURIComponent(vcardData);
+  const dataUrl = `data:text/vcard;charset=utf-8,${encodedVCard}`;
 
-function triggerVCardDownload(blob) {
-  const url = URL.createObjectURL(blob);
+  // Create link and set location or click to launch Contacts app action window
   const link = document.createElement('a');
-  link.href = url;
+  link.href = dataUrl;
   link.setAttribute('download', 'Advocacia_Filipe_Carvalho.vcf');
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
-  showToast('Abrindo contato...');
+
+  showToast('Abrindo agenda de contatos...');
 }
