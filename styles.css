@@ -238,6 +238,11 @@ body {
   transform: scale(1.15);
 }
 
+.action-btn:focus,
+.action-btn:focus-visible {
+  outline: none;
+}
+
 /* Main Links Container */
 .links-container {
   width: 100%;
@@ -352,6 +357,13 @@ body {
 .link-card:active .link-card-icon {
   background: rgba(255, 255, 255, 0.2);
   color: #ffffff;
+}
+
+.link-card:focus,
+.link-card:focus-visible,
+.social-icon:focus,
+.social-icon:focus-visible {
+  outline: none;
 }
 
 /* Footer Section */

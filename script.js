@@ -30,7 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       document.body.style.overflow = '';
     }
+    // Remove sticky focus on tap/click for mobile browsers
+  document.querySelectorAll('button, a, .action-btn, .link-card').forEach(el => {
+    el.addEventListener('mouseup', () => el.blur());
+    el.addEventListener('touchend', () => setTimeout(() => el.blur(), 150));
   });
+});
 
   // Practice toggles accordion exclusivity (close other toggles when one opens)
   const practiceToggles = document.querySelectorAll('.practice-toggle');
