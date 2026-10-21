@@ -50,7 +50,7 @@
       <div class="sorteio-hero-content">
         <h1 class="sorteio-main-title">Participe e Concorra</h1>
         <p class="sorteio-main-desc">
-          Cadastre-se, indique um amigo e avalie o escritório no Google para concorrer aos prêmios.
+          Cadastre-se, indique um amigo e avalie o escritório no Google para concorrer.
         </p>
 
         <!-- Premiação Sucinta -->
@@ -62,7 +62,7 @@
             <div class="prize-info">
               <span class="prize-label">Você (Ganhador)</span>
               <strong class="prize-title">Rodízio para 2 Pessoas na Pipper</strong>
-              <p class="prize-sub">Para você curtir junto com um acompanhante.</p>
+              <p class="prize-sub">Para você curtir com um acompanhante.</p>
             </div>
           </div>
 
@@ -76,46 +76,47 @@
               <p class="prize-sub">Retirada presencial no nosso escritório.</p>
             </div>
           </div>
+        <!-- Divisor elegante -->
+        <hr class="sorteio-section-divider">
+
+        <!-- Formulário Sucinto (3 campos) -->
+        <div class="sorteio-form-section">
+          <h2 class="section-title"><i class="fa-solid fa-pen-to-square"></i> Inscreva-se</h2>
+          <p class="form-instruction">Preencha seus dados para enviar e avaliar no Google:</p>
+
+          <form id="form-sorteio" onsubmit="handleSorteioSubmit(event)">
+            
+            <div class="input-field">
+              <label for="user-name">Seu nome:</label>
+              <div class="input-wrapper">
+                <i class="fa-regular fa-user"></i>
+                <input type="text" id="user-name" name="nome" placeholder="Digite seu nome" required autocomplete="name">
+              </div>
+            </div>
+
+            <div class="input-field">
+              <label for="friend-name">Nome do Amigo Indicado *</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-user-plus"></i>
+                <input type="text" id="friend-name" name="amigo_indicado" placeholder="Nome do amigo que ganhará o livro" required>
+              </div>
+            </div>
+
+            <div class="input-field">
+              <label for="friend-phone">Telefone / WhatsApp do Amigo Indicado*</label>
+              <div class="input-wrapper">
+                <i class="fa-brands fa-whatsapp"></i>
+                <input type="tel" id="friend-phone" name="telefone_amigo" placeholder="(17) 99999-9999" required autocomplete="tel">
+              </div>
+            </div>
+
+            <!-- Botão de Ação -->
+            <button type="submit" class="btn-submit-sorteio" id="btn-submit-sorteio">
+              <span class="btn-text"><i class="fa-solid fa-star"></i> Participar e Avaliar no Google</span>
+            </button>
+          </form>
         </div>
       </div>
-    </section>
-
-    <!-- Formulário Sucinto (3 campos) -->
-    <section class="sorteio-form-card">
-      <h2 class="section-title"><i class="fa-solid fa-pen-to-square"></i> Inscreva-se</h2>
-      <p class="form-instruction">Preencha seus dados para enviar e avaliar no Google:</p>
-
-      <form id="form-sorteio" onsubmit="handleSorteioSubmit(event)">
-        
-        <div class="input-field">
-          <label for="user-name">Seu nome:</label>
-          <div class="input-wrapper">
-            <i class="fa-regular fa-user"></i>
-            <input type="text" id="user-name" name="nome" placeholder="Digite seu nome" required autocomplete="name">
-          </div>
-        </div>
-
-        <div class="input-field">
-          <label for="friend-name">Nome do Amigo Indicado *</label>
-          <div class="input-wrapper">
-            <i class="fa-solid fa-user-plus"></i>
-            <input type="text" id="friend-name" name="amigo_indicado" placeholder="Nome do amigo que ganhará o livro" required>
-          </div>
-        </div>
-
-        <div class="input-field">
-          <label for="friend-phone">Telefone / WhatsApp do Amigo Indicado*</label>
-          <div class="input-wrapper">
-            <i class="fa-brands fa-whatsapp"></i>
-            <input type="tel" id="friend-phone" name="telefone_amigo" placeholder="(17) 99999-9999" required autocomplete="tel">
-          </div>
-        </div>
-
-        <!-- Botão de Ação -->
-        <button type="submit" class="btn-submit-sorteio" id="btn-submit-sorteio">
-          <span class="btn-text"><i class="fa-solid fa-star"></i> Participar e Avaliar no Google</span>
-        </button>
-      </form>
     </section>
 
     <!-- Link das Regras -->
@@ -151,7 +152,7 @@
           <h4>1. Premiação</h4>
           <p>• <strong>Ganhador:</strong> Terá direito a 1 rodízio na Churrascaria Pipper para si e 1 acompanhante.<br>
           <strong style="color: var(--color-exotic-orange);">Atenção:</strong> O prêmio contempla exclusivamente o valor do rodízio. Consumo de bebidas, sobremesas, taxas de serviço/gorjetas ou quaisquer outros pratos adicionais não estão incluídos e deverão ser pagos à parte pelo usuário no local.<br>
-          • <strong>Amigo Indicado:</strong> Receberá 1 exemplar de livro de presente selecionado pelo escritório.</p>
+          • <strong>Amigo Indicado:</strong> Receberá 1 exemplar do livro "Devedor Contumaz".</p>
         </div>
 
         <div class="rule-block">

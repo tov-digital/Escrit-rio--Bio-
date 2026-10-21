@@ -341,7 +341,18 @@
   box-shadow: 0 6px 18px rgba(234, 67, 53, 0.45);
 }
 
-/* Sorteio Form Card */
+.sorteio-section-divider {
+  border: none;
+  border-top: 1px solid rgba(168, 139, 87, 0.2);
+  margin: 24px 0 20px 0;
+}
+
+.sorteio-form-section {
+  width: 100%;
+  text-align: left;
+}
+
+/* Sorteio Form Card (legacy or shared) */
 .sorteio-form-card {
   width: 100%;
   background: var(--color-licorice-card);
