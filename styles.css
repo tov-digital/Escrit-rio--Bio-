@@ -1,3 +1,4 @@
+Retirada presencial com os dois juntos no nosso escritório.
 /* ==========================================================================
    DESIGN SYSTEM & COLOR PALETTE TOKENS
    Color Palette derived strictly from provided swatch image:
@@ -63,7 +64,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   line-height: 1.5;
-  background-image: 
+  background-image:
     radial-gradient(circle at 50% 0%, var(--color-aventurine) 0%, transparent 70%),
     radial-gradient(circle at 85% 60%, rgba(74, 36, 38, 0.2) 0%, transparent 50%),
     radial-gradient(circle at 15% 85%, rgba(168, 139, 87, 0.08) 0%, transparent 40%);
@@ -130,7 +131,7 @@ body {
   justify-content: center;
   font-size: 14px;
   border: 2px solid var(--color-blackout);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .profile-name {
@@ -275,6 +276,41 @@ body {
   cursor: pointer;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
+}
+
+/* Link Card em Destaque */
+.link-card.link-card-featured {
+  background: linear-gradient(135deg, rgba(217, 107, 67, 0.22), rgba(74, 36, 38, 0.45));
+  border: 1px solid rgba(217, 107, 67, 0.6);
+  box-shadow: 0 4px 20px rgba(217, 107, 67, 0.25), var(--shadow-sm);
+}
+
+.link-card.link-card-featured .link-card-icon {
+  background: linear-gradient(135deg, var(--color-exotic-orange), #b85028);
+  color: #ffffff;
+  box-shadow: 0 2px 10px rgba(217, 107, 67, 0.4);
+}
+
+.link-card.link-card-featured .link-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--color-exotic-orange);
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  margin-top: 3px;
+}
+
+.link-card.link-card-featured:hover,
+.link-card.link-card-featured:active {
+  background: linear-gradient(135deg, var(--color-exotic-orange), #c34d20);
+  border-color: #ff8c5a;
+  box-shadow: 0 0 28px rgba(217, 107, 67, 0.55), var(--shadow-md);
 }
 
 .link-card::before {
@@ -591,7 +627,9 @@ body {
   font-weight: 500;
 }
 
-.form-input, .form-select, .form-textarea {
+.form-input,
+.form-select,
+.form-textarea {
   width: 100%;
   background: var(--color-blackout);
   border: 1px solid rgba(168, 139, 87, 0.3);
@@ -604,7 +642,9 @@ body {
   transition: border var(--transition-fast);
 }
 
-.form-input:focus, .form-select:focus, .form-textarea:focus {
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
   border-color: var(--color-hazelnut);
   box-shadow: 0 0 10px rgba(168, 139, 87, 0.3);
 }
@@ -708,7 +748,8 @@ body {
 
 .btn-maps i,
 .btn-waze i {
-  font-size: 1.35rem; /* Aumentado o tamanho dos ícones */
+  font-size: 1.35rem;
+  /* Aumentado o tamanho dos ícones */
 }
 
 /* Google Maps Red Branding */
@@ -778,30 +819,68 @@ body {
 
 /* Animations */
 @keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes pulseGlow {
-  0% { box-shadow: 0 0 15px rgba(217, 107, 67, 0.4); }
-  50% { box-shadow: 0 0 30px rgba(217, 107, 67, 0.7); }
-  100% { box-shadow: 0 0 15px rgba(217, 107, 67, 0.4); }
+  0% {
+    box-shadow: 0 0 15px rgba(217, 107, 67, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(217, 107, 67, 0.7);
+  }
+
+  100% {
+    box-shadow: 0 0 15px rgba(217, 107, 67, 0.4);
+  }
 }
 
 @keyframes pulseGreen {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(46, 196, 182, 0.7); }
-  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(46, 196, 182, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(46, 196, 182, 0); }
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(46, 196, 182, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(46, 196, 182, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(46, 196, 182, 0);
+  }
 }
 
 /* Desktop Presentation Mode Enhancements */
@@ -809,6 +888,7 @@ body {
   body {
     padding: 40px 20px;
   }
+
   .page-container {
     background: rgba(18, 18, 18, 0.7);
     border: 1px solid rgba(168, 139, 87, 0.3);

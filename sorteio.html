@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Sorteio Exclusivo - Advocacia Filipe Carvalho & Churrascaria Pipper</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Participe do Sorteio Exclusivo da Advocacia Filipe Carvalho. Ganhe um rodízio na Churrascaria Pipper para você e acompanhante, e um livro para o amigo que indicar!">
+  <meta property="og:title" content="Sorteio Exclusivo - Advocacia Filipe Carvalho">
+  <meta property="og:description" content="Rodízio na Churrascaria Pipper para você e um amigo ganha um livro!">
+  <meta property="og:image" content="assets/Pipper2.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="sorteio.css">
+</head>
+<body>
+
+  <div class="page-container sorteio-container">
+
+    <!-- Top Nav -->
+    <header class="sorteio-nav">
+      <a href="index.html" class="sorteio-back-btn" id="btn-back">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Voltar</span>
+      </a>
+      <span class="sorteio-pill-badge">
+        <i class="fa-solid fa-gift"></i> Sorteio Exclusivo
+      </span>
+    </header>
+
+    <!-- Card Principal com Foco na Fachada da Pipper -->
+    <section class="sorteio-hero-card">
+      <div class="hero-image-wrapper">
+        <img src="assets/Pipper2.png" alt="Fachada Churrascaria Pipper" class="hero-cover-img">
+        <div class="hero-image-overlay">
+          <span class="hero-tag"><i class="fa-solid fa-utensils"></i> Churrascaria Pipper</span>
+        </div>
+      </div>
+
+      <div class="sorteio-hero-content">
+        <h1 class="sorteio-main-title">Participe e Concorra</h1>
+        <p class="sorteio-main-desc">
+          Cadastre-se, indique um amigo e avalie o escritório no Google para concorrer aos prêmios.
+        </p>
+
+        <!-- Premiação Sucinta -->
+        <div class="prizes-grid">
+          <div class="prize-card prize-winner">
+            <div class="prize-icon">
+              <i class="fa-solid fa-crown"></i>
+            </div>
+            <div class="prize-info">
+              <span class="prize-label">Você (Ganhador)</span>
+              <strong class="prize-title">Rodízio para 2 Pessoas na Pipper</strong>
+              <p class="prize-sub">Para você curtir junto com um acompanhante.</p>
+            </div>
+          </div>
+
+          <div class="prize-card prize-friend">
+            <div class="prize-icon">
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+            <div class="prize-info">
+              <span class="prize-label">Amigo Indicado</span>
+              <strong class="prize-title">1 Livro de Presente</strong>
+              <p class="prize-sub">Retirada presencial no nosso escritório.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulário Sucinto (3 campos) -->
+    <section class="sorteio-form-card">
+      <h2 class="section-title"><i class="fa-solid fa-pen-to-square"></i> Inscreva-se</h2>
+      <p class="form-instruction">Preencha seus dados para enviar e avaliar no Google:</p>
+
+      <form id="form-sorteio" onsubmit="handleSorteioSubmit(event)">
+        
+        <div class="input-field">
+          <label for="user-name">Seu nome:</label>
+          <div class="input-wrapper">
+            <i class="fa-regular fa-user"></i>
+            <input type="text" id="user-name" name="nome" placeholder="Digite seu nome" required autocomplete="name">
+          </div>
+        </div>
+
+        <div class="input-field">
+          <label for="friend-name">Nome do Amigo Indicado *</label>
+          <div class="input-wrapper">
+            <i class="fa-solid fa-user-plus"></i>
+            <input type="text" id="friend-name" name="amigo_indicado" placeholder="Nome do amigo que ganhará o livro" required>
+          </div>
+        </div>
+
+        <div class="input-field">
+          <label for="friend-phone">Telefone / WhatsApp do Amigo Indicado*</label>
+          <div class="input-wrapper">
+            <i class="fa-brands fa-whatsapp"></i>
+            <input type="tel" id="friend-phone" name="telefone_amigo" placeholder="(17) 99999-9999" required autocomplete="tel">
+          </div>
+        </div>
+
+        <!-- Botão de Ação -->
+        <button type="submit" class="btn-submit-sorteio" id="btn-submit-sorteio">
+          <span class="btn-text"><i class="fa-solid fa-star"></i> Participar e Avaliar no Google</span>
+        </button>
+      </form>
+    </section>
+
+    <!-- Link das Regras -->
+    <div class="rules-quick-link-box">
+      <button type="button" class="btn-rules-link" onclick="openModal('modal-rules')">
+        <i class="fa-solid fa-scale-balanced"></i> Consultar Regras do Sorteio
+      </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+      <p class="copyright">
+        &copy; 2026 <span>Advocacia Filipe Carvalho</span>. Todos os direitos reservados.
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- MODAL: Regras do Sorteio -->
+  <div class="modal-overlay" id="modal-rules">
+    <div class="modal-card rules-modal-card">
+      <button class="modal-close" onclick="closeModal('modal-rules')">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-header">
+        <h2 class="modal-title"><i class="fa-solid fa-scroll"></i> Regras do Sorteio</h2>
+        <p class="modal-subtitle">Advocacia Filipe Carvalho</p>
+      </div>
+
+      <div class="rules-content">
+        <div class="rule-block">
+          <h4>1. Premiação</h4>
+          <p>• <strong>Ganhador:</strong> Terá direito a 1 rodízio na Churrascaria Pipper para si e 1 acompanhante.<br>
+          <strong style="color: var(--color-exotic-orange);">Atenção:</strong> O prêmio contempla exclusivamente o valor do rodízio. Consumo de bebidas, sobremesas, taxas de serviço/gorjetas ou quaisquer outros pratos adicionais não estão incluídos e deverão ser pagos à parte pelo usuário no local.<br>
+          • <strong>Amigo Indicado:</strong> Receberá 1 exemplar de livro de presente selecionado pelo escritório.</p>
+        </div>
+
+        <div class="rule-block">
+          <h4>2. Retirada do Livro</h4>
+          <p>O livro do amigo indicado deverá ser retirado presencialmente no escritório da Advocacia Filipe Carvalho (Unidade São José do Rio Preto).</p>
+        </div>
+
+        <div class="rule-block">
+          <h4>3. Requisitos de Validação</h4>
+          <p>Para concorrer, o participante deve preencher o formulário informando seu nome, telefone e o nome do amigo indicado, e concluir a avaliação do escritório no Google.</p>
+        </div>
+
+        <div class="rule-block">
+          <h4>4. Sorteio e Divulgação</h4>
+          <p>O sorteio será realizado eletronicamente e anunciado nos canais oficiais do escritório. O ganhador será contatado pelo telefone informado no formulário.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 20px;">
+        <button class="btn-primary" onclick="closeModal('modal-rules')">
+          <i class="fa-solid fa-check"></i> Fechar Regras
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toast">
+    <i class="fa-solid fa-circle-check" style="color: var(--color-hazelnut);"></i>
+    <span id="toast-msg">Mensagem</span>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="sorteio.js"></script>
+</body>
+</html>
